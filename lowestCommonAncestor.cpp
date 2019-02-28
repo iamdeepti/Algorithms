@@ -45,7 +45,7 @@ class Node {
     {
         if(root==NULL)
             return false;
-        if(root->left->data==v || root->right->data==v)
+        if(root->data==v)
             return true;
         //return (contains(root->left,v) || contains(root->right,v));
         if(root->data > v)
@@ -70,7 +70,7 @@ class Node {
             st.push(root);
 
         }
-        while(!contains(st.top(),v2) && !st.empty())
+        while(!(contains(st.top()->left,v2),contains(st.top()->right,v2)) && !st.empty())
             st.pop();
         cout<<st.top()->data<<" ..";
         return st.top();
